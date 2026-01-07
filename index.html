@@ -2,10 +2,67 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Test Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escort4Me Assistant - Test</title>
+    
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    
+    <style>
+        /* Style de la page de fond */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .welcome-card {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 { color: #e74c3c; } /* Utilisation de votre couleur rouge */
+
+        /* Style de votre Chatbot */
+        df-messenger {
+            z-index: 999;
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            --df-messenger-bot-message: #2c3e50;
+            --df-messenger-user-message: #e74c3c;
+            --df-messenger-font-color: #000;
+            --df-messenger-chat-background: #f3f6fc;
+            --df-messenger-message-user-background: #d3e3fd;
+            --df-messenger-message-bot-background: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Ma page est en ligne !</h1>
-    <p>J'attends maintenant le code du chatbot pour l'intégrer.</p>
+
+    <div class="welcome-card">
+        <h1>Escort4Me AI</h1>
+        <p>L'assistant est prêt à vous aider.</p>
+        <p style="font-size: 0.9em; color: #666;">Regardez en bas à droite de votre écran.</p>
+    </div>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
+    <df-messenger
+      location="europe-west1"
+      project-id="escort4me-ia"
+      agent-id="projects/escort4me-ia/locations/europe-west1/agents/01039595-ab5e-4d9e-ba52-399f24c21db5"
+      language-code="fr"
+      max-query-length="-1">
+      <df-messenger-chat
+        chat-title="Escort4Me Assistant">
+      </df-messenger-chat>
+    </df-messenger>
+
 </body>
 </html>
